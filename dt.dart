@@ -1,3 +1,6 @@
+import 'dart:io';
+
+
 void main () {
   // String
   String firstname = "Addan";
@@ -166,5 +169,99 @@ void main () {
     }
   var thing = myFunc("Muhammad",name2:"Addan");
     print(thing);
+
+    //User Input
+  print("Enter Your Name ");
+
+  //Allows the user to enter their name
+  var name = stdin.readLineSync();
+  print("Hello $name");
+
+  //Convert , Strings , int and Doubles
+  var a,b,c;
+  a = 40;
+  b = "1";
+  c = a + int.parse(b);
+  print("$a + $b = $c");
+
+  //String to double
+  var d,e,f;
+  d = 40;
+  e = "0.1";
+  f = d + double.parse(e);
+  print("$d + $e = $f");
+
+
+
+    // int to string
+
+  var g,h,i;
+  g = 40;
+  h = "1";
+  i = g.toString() + h ;
+
+    print("$g + $h = $i");
+
+    //User input type conversion
+    print("Please enter a Number");
+
+    //get user Input
+    var nummy = stdin.readLineSync();
+    var nummy2 = int.parse(nummy ?? '0')+ 10 ;
+    print("$nummy + 10 = $nummy2");
+
+    //Fizz Buzz
+  int number = 1;
+  while(number<=100){
+
+    if(number % 5 == 0 && number % 3 ==0 ){
+      print("$number. FizzBuzz!");
+    }
+    else if(number % 5 == 0 ){
+      print("$number. Fizz!");
+
+    }
+    else if(number % 3 == 0){
+      print("$number. Buzz!");
+
+    }
+    else{
+      print("$number");
+    }
+    number++;
+  }
+
+
+
+
+  Person p1 = Person();// we can also use add data
+   p1.showData();
+
+   p1.name="Addan";
+   p1.sex="Male";
+   p1.age=23;
+   p1.showData();
+}
+//Class
+
+
+class Person {
+  String? name, sex;
+  int? age;
+
+  //Constructor
+  void addData(String name, sex, int age) {
+    this.name = name;
+    this.sex  = sex;
+    this.age  = age;
+  }
+  //Method More like a function in a class
+  void showData() {
+    print('Name=$name');
+    print('Sex=$sex');
+    print('Age=$age');
+    print("$name is $sex  and $age Years old. ");
+  }
+
 
 }
